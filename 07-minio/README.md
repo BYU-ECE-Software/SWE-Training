@@ -156,6 +156,6 @@ MINIO_SECRET_KEY=minioadmin
 
 ## Next Steps
 
-Head to [EXERCISES.md](./EXERCISES.md) and [MINI_PROJECT.md](./MINI_PROJECT.md).
+Head to [EXERCISES.md](./EXERCISES.md) to try it out, as well as your mini-project directions
 
 Editor's Note: All the MinIO memes searches auto-redirected me to Minion memes, and I was not about to put them here.

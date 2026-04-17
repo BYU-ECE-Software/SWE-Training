@@ -203,4 +203,4 @@ git stash / git stash pop          # Temporarily shelve changes
 
 ---
 
-Move on to [09 — GitHub Actions](../09-github-actions/README.md).
+Move on to [09 — GitHub Actions](../09-github-actions/README.md)!

@@ -27,7 +27,15 @@ We are so happy to have you onboard our Software wing of the team. I wanted to p
 
 - A lot of our shared files will be on Box
 - GitHub is where we keep all of our code
-- Project managment stuff will be handled by GitHub Projects (See module 9)
+- Project managment stuff will be handled by GitHub Projects (See module 8)
 - We work with feature branches, so create a branch for each issue/bugfix you're working on, name it something like #issue-number-Description-of-issue. When it's done, submit a Pull Request (see module 8) and then we'll go from there.
 - Don't share API keys or Client Secrets or commit them to GitHub
 - We move *fast*, so don't be afraid to ask for help or take initiative to try something new
+
+## Meetings
+- As a general rule I'm not a huge fan of meetings because I like to yap a lot and it tanks my productivity
+- That said, there are a couple of consistent meetings that we have
+- **Sprint** meetings happen every two weeks, we'll talk about our projects, discuss any bugs that may be happening in our code, announcements, things of the sort, and do a coding exam
+- **Career Dev** meetings alternate with sprints, we'll talk about some concept or technology that hopefully make you more employable after you leave the team
+- **Product Design** is when we meet with customers to discuss their ideas and needs for a solution, we try to keep these to an hour, and will have multiple as we progress in our solution. Everything in these meetings is pretty high level, user-focused, and not super technical
+- **System Design** is a meeting we'll have internally, as a team, to get into the technical details, e.g. decide what the schema should look like, what API calls we're going to need, and design some rough sketches of the front end views.

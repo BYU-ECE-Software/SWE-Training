@@ -176,4 +176,4 @@ Run with: `npx ts-node --compiler-options '{"module":"CommonJS"}' prisma/query.t
 
 ---
 
-Ready? Head to [MINI_PROJECT.md](./MINI_PROJECT.md).
+Ready? Head to [MINI_PROJECT.md](./MINI_PROJECT.md)!

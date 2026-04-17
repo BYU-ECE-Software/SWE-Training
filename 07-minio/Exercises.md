@@ -292,4 +292,4 @@ curl http://localhost/api/tasks/1/attachments
 
 ---
 
-Move on to [08 — GitHub](../08-github/README.md).
+Move on to [08 — GitHub](../08-github/README.md)!

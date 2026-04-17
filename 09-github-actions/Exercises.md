@@ -237,4 +237,4 @@ Watch the workflow visualization in the Actions tab — you'll see the dependenc
 
 ---
 
-Ready? Head to [MINI_PROJECT.md](./MINI_PROJECT.md).
+Ready? Head to [MINI_PROJECT.md](./MINI_PROJECT.md)!

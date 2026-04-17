@@ -180,7 +180,7 @@ You'll see real `CREATE TABLE` and `ALTER TABLE` statements — knowing SQL mean
 
 ## Next Steps
 
-Head to [EXERCISES.md](./EXERCISES.md) to practice SQL hands-on, then [MINI_PROJECT.md](./MINI_PROJECT.md) to inspect the Task Tracker schema directly in Postgres.
+Head to [EXERCISES.md](./EXERCISES.md) to practice SQL hands-on, this file will also include what you need for your mini-project
 
 ## Tasteful Memes
-<img src="../memes/PostgresMeme1.jpg" width="400" height="400"
+<img src="../memes/PostgresMeme1.jpg" width="400" height="400">

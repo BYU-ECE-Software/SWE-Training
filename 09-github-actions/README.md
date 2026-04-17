@@ -184,8 +184,8 @@ Set it up: repo → Settings → Branches → Branch protection rules → `main`
 ---
 
 ## Helpful (optional, but encouraged) videos
-[Fireship CI/CD in 100 Seconds](https://www.youtube.com/watch?v=scEDHsr3APg)
-[Fireship Github Actions](https://www.youtube.com/watch?v=eB0nUzAI7M8)
+- [Fireship CI/CD in 100 Seconds](https://www.youtube.com/watch?v=scEDHsr3APg)
+- [Fireship Github Actions](https://www.youtube.com/watch?v=eB0nUzAI7M8)
 
 ## Next Steps
 

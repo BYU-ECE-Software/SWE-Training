@@ -288,4 +288,4 @@ curl -X POST http://localhost:3000/api/tasks \
 
 ---
 
-Ready? Head to [MINI_PROJECT.md](./MINI_PROJECT.md).
+Ready? Head to [MINI_PROJECT.md](./MINI_PROJECT.md)!

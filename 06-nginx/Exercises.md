@@ -249,4 +249,4 @@ curl -I http://localhost
 
 ---
 
-Move on to [07 — MinIO](../07-minio/README.md).
+Move on to [07 — MinIO](../07-minio/README.md)!

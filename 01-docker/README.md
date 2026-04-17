@@ -145,4 +145,4 @@ Head to [EXERCISES.md](./EXERCISES.md) to build and run your first containers, t
 
 ## Tasteful Memes
 <img src="../memes/DockerMeme1.png" width="400" height="400">
-<img src="../memes/DockerMeme2.png" width="400" height="400">
+<img src="../memes/DockerMeme2.jpg" width="400" height="400">

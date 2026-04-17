@@ -172,8 +172,8 @@ docker exec task-tracker-nginx-1 nginx -t
 
 ## Next Steps
 
-Head to [EXERCISES.md](./EXERCISES.md) and [MINI_PROJECT.md](./MINI_PROJECT.md).
+Head to [EXERCISES.md](./EXERCISES.md) and this file will also have your Mini Project instructions
 
 ## Tasteful Memes
 <img src="../memes/NginxMeme1.jpg" height="400" width="400">
-<img src="../memes/NginxMeme2.jpg" height="400" width="400">
+<img src="../memes/NginxMeme2.jpeg" height="400" width="400">

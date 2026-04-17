@@ -188,4 +188,4 @@ Head to [EXERCISES.md](./EXERCISES.md) to build pages and routes, then [MINI_PRO
 
 ## Tasteful memes
 <img src="../memes/NextMeme1.png" width="800" height="400">
-<img src="../memes/NextMeme2.png.png" width="400" height="400">
+<img src="../memes/NextMeme2.png" width="400" height="400">

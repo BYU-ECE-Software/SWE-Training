@@ -166,4 +166,4 @@ Render all three variants and tab through them to see focus styles.
 
 ---
 
-Ready? Head to [MINI_PROJECT.md](./MINI_PROJECT.md).
+Ready? Head to [MINI_PROJECT.md](./MINI_PROJECT.md)!
