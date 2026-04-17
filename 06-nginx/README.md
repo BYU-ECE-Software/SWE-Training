@@ -165,8 +165,15 @@ To test the config for syntax errors:
 docker exec task-tracker-nginx-1 nginx -t
 ```
 
+## Helpful (optional, but encouraged) videos
+[Fireship: Nginx in 100 Seconds](https://www.youtube.com/watch?v=JKxlsvZXG7c)
+
 ---
 
 ## Next Steps
 
 Head to [EXERCISES.md](./EXERCISES.md) and [MINI_PROJECT.md](./MINI_PROJECT.md).
+
+## Tasteful Memes
+<img src="../memes/NginxMeme1.jpg" height="400" width="400">
+<img src="../memes/NginxMeme2.jpg" height="400" width="400">

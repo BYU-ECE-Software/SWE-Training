@@ -183,6 +183,13 @@ Set it up: repo → Settings → Branches → Branch protection rules → `main`
 
 ---
 
+## Helpful (optional, but encouraged) videos
+[Fireship CI/CD in 100 Seconds](https://www.youtube.com/watch?v=scEDHsr3APg)
+[Fireship Github Actions](https://www.youtube.com/watch?v=eB0nUzAI7M8)
+
 ## Next Steps
 
 Head to [EXERCISES.md](./EXERCISES.md) to write workflows for the Task Tracker, then [MINI_PROJECT.md](./MINI_PROJECT.md) to build a full CI/CD pipeline.
+
+## Tasteful Memes
+<img src="../memes/GitHubActionsMeme1.webp" width="400" height="400">

@@ -223,8 +223,14 @@ npx prisma generate
 npx prisma db pull
 ```
 
+## Helpful (optional, but encouraged) videos
+[Fireship: Prisma in 100 Seconds](https://www.youtube.com/watch?v=rLRIB6AF2Dg)
+
 ---
 
 ## Next Steps
 
 Head to [EXERCISES.md](./EXERCISES.md), then [MINI_PROJECT.md](./MINI_PROJECT.md) to connect the Task Tracker to a real database.
+
+## Tasteful Memes
+<img src="../memes/PrismaMeme1.jpg" width="400" height="400">

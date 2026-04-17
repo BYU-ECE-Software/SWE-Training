@@ -162,9 +162,15 @@ function Badge({ status }: { status: "todo" | "done" | "in_progress" }) {
   );
 }
 ```
+## Helpful (optional, but encouraged) Videos
+[Fireship: Tailwind in 100 Seconds](https://www.youtube.com/watch?v=mr15Xzb1Ook)
+[Fireship: TailwindCSS Tutorial](https://www.youtube.com/watch?v=pfaSUYaSgRo)
 
 ---
 
 ## Next Steps
 
 Head to [EXERCISES.md](./EXERCISES.md) to practice building components, then [MINI_PROJECT.md](./MINI_PROJECT.md) to polish the Task Tracker's UI.
+
+## Tasteful Memes
+<img src="../memes/TailwindMeme.jpg" width="750" height="500">

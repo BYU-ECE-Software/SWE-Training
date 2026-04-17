@@ -176,8 +176,16 @@ export async function POST(request: Request) {
 }
 ```
 
+## Helpful (optional, but encouraged) videos
+[Fireship: Next.js in 100 seconds/Full tutorial](https://www.youtube.com/watch?v=Sklc_fQBmcs)
+[Fireship: Typescript](https://www.youtube.com/watch?v=zQnBQ4tB3ZA)
+
 ---
 
 ## Next Steps
 
 Head to [EXERCISES.md](./EXERCISES.md) to build pages and routes, then [MINI_PROJECT.md](./MINI_PROJECT.md) to scaffold the Task Tracker UI.
+
+## Tasteful memes
+<img src="../memes/NextMeme1.png" width="800" height="400">
+<img src="../memes/NextMeme2.png.png" width="400" height="400">

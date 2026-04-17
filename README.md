@@ -2,7 +2,7 @@
 
 ## Roman Vish (with some help from Claude)
 
-Welcome! This repo is your hands-on guide to our tech stack. Instead of watching videos, you'll **build things** — specifically, a simple Task Tracker app that grows module by module until it's a fully running full-stack app.
+Welcome! This repo is your hands-on guide to our tech stack. Instead of watching videos, you'll **build things** — specifically, a simple Task Tracker app that grows module by module until it's a fully running full-stack app. (And watching a couple videos hehe)
 
 ## The Project
 

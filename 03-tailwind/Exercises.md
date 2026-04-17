@@ -1,290 +1,168 @@
-# 02 — Next.js App Router: Exercises
+# 03 — Tailwind CSS: Exercises
 
-## Setup
+Use the Next.js app from module 02, or run `npx create-next-app@latest tailwind-exercises --typescript --tailwind --app` for a fresh sandbox.
 
-Scaffold a new Next.js app to work in for these exercises:
+---
+
+## Exercise 1: Build a Card Component
+
+Without writing any CSS, build this card using only Tailwind utilities:
+
+- White background, light gray border, rounded corners, padding
+- A bold title
+- A muted description text
+- A colored badge (pick any color)
+
+**Try it yourself first, then compare:**
+
+```tsx
+// components/TaskCard.tsx
+export default function TaskCard() {
+  return (
+    <div className="bg-white border border-gray-200 rounded-lg p-4 max-w-sm">
+      <div className="flex items-start justify-between mb-2">
+        <h3 className="font-semibold text-gray-900">Set up Docker Compose</h3>
+        <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded-full">
+          Done
+        </span>
+      </div>
+      <p className="text-sm text-gray-500">
+        Configure all four services to run together locally.
+      </p>
+      <div className="mt-3 text-xs text-gray-400">Assigned to: Alex</div>
+    </div>
+  );
+}
+```
+
+**Checkpoint:** You can build a styled component without opening a `.css` file.
+
+---
+
+## Exercise 2: Responsive Grid
+
+Build a grid of cards that changes from 1 column on mobile to 3 columns on desktop:
+
+```tsx
+export default function TaskGrid() {
+  const tasks = [
+    { id: 1, title: "Docker setup", status: "done" },
+    { id: 2, title: "Next.js scaffold", status: "in_progress" },
+    { id: 3, title: "Tailwind styling", status: "in_progress" },
+    { id: 4, title: "Prisma schema", status: "todo" },
+    { id: 5, title: "API routes", status: "todo" },
+    { id: 6, title: "Write tests", status: "todo" },
+  ];
+
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
+      {tasks.map((task) => (
+        <div key={task.id} className="bg-white border border-gray-200 rounded-lg p-4">
+          <p className="font-medium">{task.title}</p>
+          <p className="text-sm text-gray-500 mt-1">{task.status}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+```
+
+Resize your browser window and watch the grid change.
+
+**Checkpoint:** You can use responsive prefixes to adapt layout to screen size.
+
+---
+
+## Exercise 3: Conditional Classes with cn()
+
+Install the utilities:
 
 ```bash
-npx create-next-app@latest nextjs-exercises --typescript --tailwind --eslint --app --no-src-dir
-cd nextjs-exercises
-npm run dev
+npm install clsx tailwind-merge
 ```
 
-Visit http://localhost:3000 to confirm it's running.
+Create `lib/utils.ts`:
+```ts
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
----
-
-## Exercise 1: Pages and Routing
-
-Create two new pages by adding folders and `page.tsx` files.
-
-**Create `app/about/page.tsx`:**
-```tsx
-export default function AboutPage() {
-  return <h1>About</h1>;
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
 }
 ```
 
-Visit http://localhost:3000/about — it works automatically.
-
-Now create a dynamic route for tasks:
-
-**Create `app/tasks/page.tsx`:**
-```tsx
-export default function TasksPage() {
-  return <h1>All Tasks</h1>;
-}
-```
-
-**Create `app/tasks/[id]/page.tsx`:**
-```tsx
-export default function TaskDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  return <h1>Task #{params.id}</h1>;
-}
-```
-
-Visit http://localhost:3000/tasks/42 — you should see "Task #42". Change the URL to any number.
-
-**Checkpoint:** You understand how folder names become URL segments and how `[id]` creates a dynamic segment.
-
----
-
-## Exercise 2: Layouts and Navigation
-
-**Update `app/layout.tsx`** to add a navigation bar that appears on every page:
+Now build a `StatusBadge` component that changes color based on status:
 
 ```tsx
-import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+type Status = "todo" | "in_progress" | "done";
+
+export default function StatusBadge({ status }: { status: Status }) {
   return (
-    <html lang="en">
-      <body>
-        <nav style={{ padding: "1rem", borderBottom: "1px solid #eee" }}>
-          <Link href="/">Home</Link>
-          {" | "}
-          <Link href="/tasks">Tasks</Link>
-          {" | "}
-          <Link href="/about">About</Link>
-        </nav>
-        <main style={{ padding: "1rem" }}>
-          {children}
-        </main>
-      </body>
-    </html>
+    <span
+      className={cn(
+        "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium",
+        status === "todo" && "bg-gray-100 text-gray-700",
+        status === "in_progress" && "bg-yellow-100 text-yellow-800",
+        status === "done" && "bg-green-100 text-green-800"
+      )}
+    >
+      {status === "in_progress" ? "In Progress" : status.charAt(0).toUpperCase() + status.slice(1)}
+    </span>
   );
 }
 ```
 
-Click through the nav links and notice the page content changes but the nav stays — that's the layout at work.
+Test it by rendering `<StatusBadge status="todo" />`, `<StatusBadge status="in_progress" />`, `<StatusBadge status="done" />`.
 
-Now add a **nested layout** that only wraps task pages:
+**Checkpoint:** You can apply conditional styles cleanly using `cn()`.
 
-**Create `app/tasks/layout.tsx`:**
+---
+
+## Exercise 4: Hover and Focus States
+
+Build a button with proper interactive states:
+
 ```tsx
-export default function TasksLayout({
+export default function ActionButton({
   children,
+  variant = "primary",
 }: {
   children: React.ReactNode;
+  variant?: "primary" | "secondary" | "danger";
 }) {
   return (
-    <div>
-      <h2 style={{ color: "gray" }}>Tasks Section</h2>
+    <button
+      className={cn(
+        "px-4 py-2 rounded-md text-sm font-medium transition-colors",
+        "focus:outline-none focus:ring-2 focus:ring-offset-2",
+        variant === "primary" &&
+          "bg-black text-white hover:bg-gray-800 focus:ring-gray-500",
+        variant === "secondary" &&
+          "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 focus:ring-gray-400",
+        variant === "danger" &&
+          "bg-red-600 text-white hover:bg-red-700 focus:ring-red-500"
+      )}
+    >
       {children}
-    </div>
-  );
-}
-```
-
-Visit `/tasks` and `/tasks/42` — both show the "Tasks Section" header. Visit `/about` — it doesn't.
-
-**Checkpoint:** You understand how layouts compose and nest.
-
----
-
-## Exercise 3: Server Components vs Client Components
-
-This is the big one. You'll build the same feature two ways.
-
-### Part A — Server Component (data fetching)
-
-**Update `app/tasks/page.tsx`** to fetch data on the server:
-
-```tsx
-// No "use client" — this is a Server Component
-
-type Post = {
-  id: number;
-  title: string;
-  completed: boolean;
-};
-
-async function getTasks(): Promise<Post[]> {
-  // fetch() works directly in server components
-  const res = await fetch("https://jsonplaceholder.typicode.com/todos?_limit=10");
-  return res.json();
-}
-
-export default async function TasksPage() {
-  const tasks = await getTasks(); // runs on the server!
-
-  return (
-    <div>
-      <h1>Tasks</h1>
-      <ul>
-        {tasks.map((task) => (
-          <li key={task.id} style={{ textDecoration: task.completed ? "line-through" : "none" }}>
-            {task.title}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-```
-
-Open DevTools → Network tab. Notice there's no fetch request to `jsonplaceholder` from the browser — it happened on the server.
-
-### Part B — Client Component (interactivity)
-
-Create a separate component that needs browser interactivity:
-
-**Create `app/tasks/TaskFilter.tsx`:**
-```tsx
-"use client";
-
-import { useState } from "react";
-
-type Props = {
-  onFilterChange: (showCompleted: boolean) => void;
-};
-
-export default function TaskFilter({ onFilterChange }: Props) {
-  const [showCompleted, setShowCompleted] = useState(true);
-
-  const toggle = () => {
-    const next = !showCompleted;
-    setShowCompleted(next);
-    onFilterChange(next);
-  };
-
-  return (
-    <button onClick={toggle}>
-      {showCompleted ? "Hide completed" : "Show completed"}
     </button>
   );
 }
 ```
 
-Now update the page — notice we need to make the page itself a client component to use state for filtering. This is the trade-off: once you need `useState`, the component (and its data fetching) moves to the client.
+Render all three variants and tab through them to see focus styles.
 
-```tsx
-// app/tasks/page.tsx — now a client component to support filtering
-"use client";
-
-import { useEffect, useState } from "react";
-import TaskFilter from "./TaskFilter";
-
-type Task = { id: number; title: string; completed: boolean };
-
-export default function TasksPage() {
-  const [tasks, setTasks] = useState<Task[]>([]);
-  const [showCompleted, setShowCompleted] = useState(true);
-
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos?_limit=10")
-      .then((r) => r.json())
-      .then(setTasks);
-  }, []);
-
-  const filtered = showCompleted ? tasks : tasks.filter((t) => !t.completed);
-
-  return (
-    <div>
-      <h1>Tasks</h1>
-      <TaskFilter onFilterChange={setShowCompleted} />
-      <ul>
-        {filtered.map((task) => (
-          <li key={task.id}>{task.title}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-```
-
-Now check DevTools — the fetch IS visible in the network tab because it's running in the browser.
-
-**Checkpoint:** You understand the trade-off between server and client components, and when you need to use `"use client"`.
-
----
-
-## Exercise 4: API Routes
-
-Create a simple API endpoint.
-
-**Create `app/api/tasks/route.ts`:**
-```ts
-const MOCK_TASKS = [
-  { id: 1, title: "Set up Docker", status: "done" },
-  { id: 2, title: "Learn Next.js", status: "in_progress" },
-  { id: 3, title: "Write tests", status: "todo" },
-];
-
-export async function GET() {
-  return Response.json(MOCK_TASKS);
-}
-
-export async function POST(request: Request) {
-  const body = await request.json();
-
-  if (!body.title) {
-    return Response.json({ error: "title is required" }, { status: 400 });
-  }
-
-  const newTask = {
-    id: MOCK_TASKS.length + 1,
-    title: body.title,
-    status: "todo",
-  };
-
-  // In a real app we'd save to the DB here
-  MOCK_TASKS.push(newTask);
-
-  return Response.json(newTask, { status: 201 });
-}
-```
-
-Test it:
-```bash
-# GET
-curl http://localhost:3000/api/tasks
-
-# POST
-curl -X POST http://localhost:3000/api/tasks \
-  -H "Content-Type: application/json" \
-  -d '{"title": "My new task"}'
-```
-
-**Checkpoint:** You can create API endpoints and handle different HTTP methods.
+**Checkpoint:** You can handle hover, focus, and variants cleanly.
 
 ---
 
 ## Reflection Questions
 
-1. What's the difference between a Server Component and a Client Component? When would you choose each?
-2. If you have a Server Component that fetches data and you need to add a `useState` hook to it, what do you have to change?
-3. What's the difference between `layout.tsx` and `page.tsx`?
-4. How does Next.js know that `app/tasks/[id]/page.tsx` maps to `/tasks/42`?
-5. When you use `Link` from next/link instead of a regular `<a>` tag, what does Next.js do differently?
+1. What does "utility-first" mean and how is it different from writing regular CSS classes?
+2. What does `md:grid-cols-3` mean and when does it take effect?
+3. Why use `cn()` instead of a template literal like `` `px-4 ${condition ? 'bg-red-500' : 'bg-blue-500'}` ``?
+4. What's the difference between `text-sm` and `font-medium`?
 
 ---
 

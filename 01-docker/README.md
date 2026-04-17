@@ -135,6 +135,14 @@ When you clone a project and run `docker compose up`, all four start together. N
 
 ---
 
+## Helpful (optional, but encouraged) Videos
+[Fireship: Docker in 100 seconds](https://www.youtube.com/watch?v=Gjnup-PuquQ)
+[Fireship: Learn Docker in 7 Easy Steps](https://www.youtube.com/watch?v=gAkwW2tuIqE)
+
 ## Next Steps
 
 Head to [EXERCISES.md](./EXERCISES.md) to build and run your first containers, then [MINI_PROJECT.md](./MINI_PROJECT.md) to set up the Task Tracker's Docker foundation.
+
+## Tasteful Memes
+<img src="../memes/DockerMeme1.png" width="400" height="400">
+<img src="../memes/DockerMeme2.png" width="400" height="400">

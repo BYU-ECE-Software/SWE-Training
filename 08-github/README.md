@@ -225,9 +225,20 @@ git show <commit-hash>
 # Find which commit introduced a bug (binary search through history)
 git bisect start
 ```
+## Helpful (optional, but encouraged) videos
+[Fireship Github](https://www.youtube.com/watch?v=HkdAHXoRtos)
+[Fireship Pull Requests](https://www.youtube.com/watch?v=8lGpZkjnkt4) *note for us you won't fork, you'll just branch
 
 ---
 
 ## Next Steps
 
 Head to [EXERCISES.md](./EXERCISES.md) to practice the full PR workflow, then [MINI_PROJECT.md](./MINI_PROJECT.md) to set up a GitHub Project for the Task Tracker.
+
+## Tasteful Memes
+<img src="../memes/GitHubMeme1.jpg" width="350" height="500">
+<img src="../memes/GitHubMeme2.jpg" width="400" height="400">
+
+## Example of what issue branching and GitHub Projects looks like
+<img src="../Images/Feature-Branching.png">
+<img src="../Images/GitHubProjects.png"

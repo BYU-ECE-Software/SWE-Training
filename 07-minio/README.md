@@ -151,6 +151,11 @@ MINIO_SECRET_KEY=minioadmin
 
 ---
 
+## Helpful (optional, but encouraged) videos
+[MinIO](https://www.youtube.com/watch?v=FjvDOGcTYyQ)
+
 ## Next Steps
 
 Head to [EXERCISES.md](./EXERCISES.md) and [MINI_PROJECT.md](./MINI_PROJECT.md).
+
+Editor's Note: All the MinIO memes searches auto-redirected me to Minion memes, and I was not about to put them here.

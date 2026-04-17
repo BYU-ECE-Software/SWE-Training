@@ -175,6 +175,12 @@ You'll see real `CREATE TABLE` and `ALTER TABLE` statements — knowing SQL mean
 
 ---
 
+## Helpful (optional, but encouraged) videos
+[Fireship: PostgreSQL in 100 seconds](https://www.youtube.com/watch?v=n2Fluyr3lbc)
+
 ## Next Steps
 
 Head to [EXERCISES.md](./EXERCISES.md) to practice SQL hands-on, then [MINI_PROJECT.md](./MINI_PROJECT.md) to inspect the Task Tracker schema directly in Postgres.
+
+## Tasteful Memes
+<img src="../memes/PostgresMeme1.jpg" width="400" height="400"
